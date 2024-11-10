@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="images/AHJIN.webp">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-image: url('images/home.png');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .login {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 20px rgba(0, 0, 255, 0.3);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #ffed4a; 
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #ffed4a;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1em;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(0, 0, 255, 0.7);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background: #0056b3;
+            box-shadow: 0 0 8px rgba(0, 0, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        #notif {
+            color: #ff4a4a;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .login {
+                width: 280px;
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            button {
+                font-size: 0.95em;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login {
+                width: 260px;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            button {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h2>Hunter Login</h2>
+        <form id="loginForm" onsubmit="return validatedLogin()">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <span id="notif"></span>
+        </form>
+    </div>
+    <script>
+        function validatedLogin(){
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            var notif = document.getElementById("notif");
+
+            if(username === "gelo" && password === "1223"){
+                notif.innerText = "Login successful!";
+                notif.style.color = '#4aff4a';
+                setTimeout(() => window.location.href="Registration.html", 1000);
+                return false;
+            } else {
+                notif.textContent = "Incorrect username or password! Please try again!";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

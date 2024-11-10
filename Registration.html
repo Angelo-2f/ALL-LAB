@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="icon" type="image/x-icon" href="images/AHJIN.webp">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('images/back10.jpeg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-attachment: fixed;
+            position: relative;
+            color: #fff;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+        #formContainer {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2), 0 0 30px rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            width: 400px;
+            max-width: 90%;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(5px);
+            color: #e0e0e0;
+        }
+        #logoArea {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #logoArea img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        #logoArea h3 {
+            color: #00ced1;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .groupField {
+            margin-bottom: 20px;
+        }
+
+        .groupField label {
+            font-size: 14px;
+            color: #b0e0e6;
+            font-weight: 600;
+        }
+
+        .groupField input,
+        .groupField select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 25px;
+            border: 1px solid #333;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .groupField input::placeholder,
+        .groupField select::placeholder {
+            color: #aaa;
+        }
+
+        .groupField input:focus,
+        .groupField select:focus {
+            border: 1px solid #00ced1;
+            box-shadow: 0 0 10px rgba(0, 206, 209, 0.7), 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+
+        #buttonArea {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        #buttonArea button {
+            background-color: #00ced1;
+            border: none;
+            padding: 12px 20px;
+            color: #333;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px rgba(0, 206, 209, 0.3);
+        }
+
+        #buttonArea button:hover {
+            background-color: #008b8b;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 25px rgba(0, 206, 209, 0.4);
+            transform: scale(1.05);
+        }
+
+        #buttonArea button:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 768px) {
+            #formContainer {
+                padding: 30px;
+                width: 90%;
+            }
+            #logoArea h3 {
+                font-size: 24px;
+            }
+            .groupField input, .groupField select {
+                padding: 10px;
+            }
+            #buttonArea button {
+                font-size: 14px;
+                padding: 10px 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #formContainer {
+                padding: 20px;
+                width: 100%;
+            }
+            #logoArea h3 {
+                font-size: 22px;
+            }
+            .groupField input, .groupField select {
+                padding: 8px;
+            }
+            #buttonArea button {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="formContainer">
+        <form action="index.html" id="registrationForm">
+            <div id="logoArea">
+                <img src="images/AHJIN.webp" alt="Logo">
+                <h3>Registration</h3>
+            </div>
+            <div id="inputFieldArea">
+                <div class="groupField">
+                    <small style="color: #b0e0e6;">Personal Information</small><br>
+                    <label for="fname">Enter First Name:</label><br>
+                    <input type="text" id="fname" placeholder="First Name" autocomplete="off" required>
+                </div>
+                <div class="groupField">
+                    <label for="mname">Enter Middle Name:</label><br>
+                    <input type="text" id="mname" placeholder="Middle Name" autocomplete="off" required>
+                </div>
+                <div class="groupField">
+                    <label for="lname">Enter Last Name:</label><br>
+                    <input type="text" id="lname" placeholder="Last Name" autocomplete="off" required>
+                </div>
+                <div class="groupField">
+                    <label for="suffix">Select Suffix:</label><br>
+                    <select id="suffix">
+                        <option>None</option>
+                        <option>Jr</option>
+                        <option>Sr</option>
+                        <option>I</option>
+                        <option>II</option>
+                        <option>III</option>
+                        <option>IV</option>
+                        <option>V</option>
+                    </select>
+                </div>
+                <div class="groupField">
+                    <label for="bdate">Pick Birthdate:</label><br>
+                    <input type="date" id="bdate" autocomplete="off" required>
+                </div>
+                <div class="groupField">
+                    <label for="email">Enter Email Address:</label><br>
+                    <input type="email" id="email" placeholder="example@email.com" autocomplete="off" required>
+                </div>
+                <div class="groupField">
+                    <small style="color: #b0e0e6;">User Account Information</small><br>
+                    <label for="username">Enter Username:</label><br>
+                    <input type="text" id="username" placeholder="Username123" autocomplete="off" required>
+                </div>
+                <div class="groupField">
+                    <label for="password">Enter Password:</label><br>
+                    <input type="password" id="password" placeholder="Password" autocomplete="off" required>
+                </div>
+                <div class="groupField">
+                    <label for="confirmPassword">Confirm Password:</label><br>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="off" required>
+                </div>
+                <div id="buttonArea">
+                    <button type="reset">Cancel</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
